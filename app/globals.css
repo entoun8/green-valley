@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-green-starbucks: #006241;
+  --color-green-accent: #00754a;
+  --color-green-house: #1e3932;
+  --color-green-uplift: #2b5148;
+  --color-canvas: #f2f0eb;
+  --color-card: #ffffff;
+  --color-gold: #cba258;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #767676;
+
+  /* Font families (next/font injects --font-inter and --font-lora) */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-lora), Georgia, serif;
+
+  /* Text scale — rem values compensate for html { font-size: 62.5% } */
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-base: 1.6rem;
+  --text-lg: 1.8rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.4rem;
+  --text-3xl: 3rem;
+  --text-4xl: 3.6rem;
+  --text-5xl: 4.8rem;
+  --text-6xl: 6rem;
+
+  /* Spacing base — multiplied by Tailwind scale (e.g. p-4 = 4 × 0.4rem = 16px) */
+  --spacing: 0.4rem;
+
+  /* Border radius */
+  --radius-pill: 50px;
+  --radius-card: 1.2rem;
+  --radius-sm: 0.6rem;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-nav: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+:root {
+  --colour-green-starbucks: #006241;
+  --colour-green-accent: #00754a;
+  --colour-green-house: #1e3932;
+  --colour-green-uplift: #2b5148;
+  --colour-canvas: #f2f0eb;
+  --colour-card: #ffffff;
+  --colour-gold: #cba258;
+  --colour-text-primary: #1a1a1a;
+  --colour-text-secondary: #4a4a4a;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--colour-canvas);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--colour-text-primary);
+}
+
+/* ValueMarquee animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track.paused {
+  animation-play-state: paused;
+}
